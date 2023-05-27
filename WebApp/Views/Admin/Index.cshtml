@@ -1,0 +1,20 @@
+﻿@inject UserAdminService userAdminService
+
+@{
+    ViewData["Title"] = "Backoffice";
+}
+<div>
+    @foreach(var user in await userAdminService.GetUsersAsync())
+    {
+        <div class="mb-5">
+            <div>@user.Email 
+                (
+                    @foreach (var roleName in user.RoleNames)
+                    {
+                    <span>@roleName</span>
+                    }
+                )
+            </div>
+        </div>
+    }
+</div>

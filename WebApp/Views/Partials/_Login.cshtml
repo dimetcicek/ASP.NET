@@ -1,0 +1,20 @@
+﻿@model LoginViewModel
+
+<form asp-action="Index" asp-controller="Login" method="post" novalidate>
+    <div asp-validation-summary=ModelOnly class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" type="email" class="form-control" onkeyup="validateEmail(event)" />
+        <span asp-validation-for="Email" class="small text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" onkeyup="validatePassword(event)" />
+        <span asp-validation-for="Password" class="small text-danger"></span>
+    </div>
+
+    <div class="d-grid">
+        <button type="submit" class="btn btn-success">SUBMIT</button>
+    </div>
+</form>

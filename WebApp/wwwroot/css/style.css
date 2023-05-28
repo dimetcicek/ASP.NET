@@ -8,6 +8,16 @@ html, body {
   color: #636363;
 }
 
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layoutBody {
+  flex: 1;
+}
+
 .open-menu {
   width: 100vw !important;
   opacity: 0.99;
@@ -36,6 +46,7 @@ html, body {
   padding: 0 !important;
   background-color: transparent;
   border: none !important;
+  width: auto;
   text-decoration: none;
 }
 .btn-toggle:hover {
@@ -120,7 +131,8 @@ html, body {
 }
 .collection-item img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: scale-down;
 }
 .collection-item .body {
   color: #292929;
@@ -167,6 +179,44 @@ html, body {
   .collection-item:hover .add-cart {
     display: block;
   }
+}
+
+.product-details {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
+}
+.product-details .product-details-features {
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+.product-details h1 {
+  color: #292929;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.product-details p {
+  color: #636363;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  max-width: 550px;
+}
+.product-details h3 {
+  color: #292929;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.product-details img {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
 }
 
 .collection-content {
@@ -698,64 +748,63 @@ footer .container {
   text-align: center;
   padding: 30px 20px;
 }
-@media (min-width: 768px) {
-  .up-to-sell .collection-grid .collection-content .container {
-    padding: 30px 80px;
-  }
+.up-to-sell .body {
+  background-color: white;
+  width: 91%;
 }
-@media (min-width: 992px) {
-  .up-to-sell .collection-grid .collection-content .container {
-    padding: 10px 20px;
-  }
-}
-@media (min-width: 1200px) {
-  .up-to-sell .collection-grid .collection-content .container {
-    padding: 30px;
-  }
-}
-.up-to-sell .collection-grid .collection-content .title-red {
-  font-family: "Poppins", sans-serif;
-  color: #FA3150;
+.up-to-sell .title {
+  color: black;
   font-size: 18px;
-  font-weight: 700;
-}
-.up-to-sell .collection-grid .collection-content .title {
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  font-size: 48px;
-  color: #292929;
-}
-.up-to-sell .collection-grid .collection-content .ingress {
   font-family: "Poppins", sans-serif;
-  color: #292929;
-  font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
+  padding: 10px;
 }
-.up-to-sell .collection-grid .collection-content .text {
-  margin-top: 20px;
-  font-family: "Roboto", sans-serif;
+.up-to-sell .price {
   color: #636363;
   font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+}
+.up-to-sell .discover {
+  text-align: center;
+}
+.up-to-sell .discover h1 {
+  padding: 10px;
+  color: #FA3150;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.up-to-sell .discover h2 {
+  padding: 10px;
+  color: #636363;
+  font-size: 48px;
+  font-weight: 700;
+}
+.up-to-sell .discover h3 {
+  padding: 10px;
+  color: #636363;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.up-to-sell .discover p {
+  padding: 10px;
+  color: #636363;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
-.up-to-sell .collection-grid .collection-content .link {
-  display: block;
-  margin-top: 10px;
-  color: #292929;
-}
-.up-to-sell .collection-grid .collection-content .link:hover {
-  color: #FA3150;
-}
-@media (min-width: 1200px) {
-  .up-to-sell .collection-grid .collection-content .link {
-    margin-top: 50px;
-  }
+.up-to-sell .discover .btn-sell {
+  padding: 20px;
+  border: none;
 }
 
 .top-selling {
   padding: 40px 20px;
 }
-.top-selling .collection-title {
+.top-selling .top-selling-title {
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
@@ -763,10 +812,11 @@ footer .container {
   color: #292929;
 }
 .top-selling .collection-grid {
+  position: relative;
   margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 40px;
+  gap: 30px;
 }
 @media (min-width: 768px) {
   .top-selling .collection-grid {
@@ -783,82 +833,61 @@ footer .container {
     grid-template-columns: repeat(7, 1fr);
   }
 }
-.top-selling .collection-grid .collection-item .body .title {
-  font-size: 14px;
+.top-selling .collection-grid a:hover {
+  text-decoration: underline;
+  color: black;
+}
+.top-selling .collection-grid .title {
+  color: black;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
-.top-selling .load-more {
-  margin-top: 40px;
+.top-selling .collection-grid .price {
+  color: #636363;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.top-selling .btn-arrows {
   text-align: center;
 }
 
-.newsletter {
-  font-family: "Poppins", sans-serif;
+.subscribe-panel {
   background-color: #AEAEAE;
-  padding: 30px 20px;
-  z-index: -1;
-}
-@media (min-width: 768px) {
-  .newsletter {
-    padding: 50px 20px;
-  }
-}
-@media (min-width: 1200px) {
-  .newsletter {
-    padding: 80px 20px;
-  }
-}
-.newsletter .container {
-  background-color: #FFFFFF;
-  padding: 40px 20px;
+  height: 370px;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: -1;
 }
-@media (min-width: 992px) {
-  .newsletter .container {
-    padding: 70px 50px;
-  }
+.subscribe-panel .container {
+  background-color: #FFFFFF;
+  text-align: center;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@media (min-width: 1200px) {
-  .newsletter .container {
-    padding: 70px 100px;
-  }
-}
-.newsletter form {
-  width: 100%;
+.subscribe-panel .subscribebox {
+  background-color: #F3F2F2;
   position: relative;
-  z-index: 0;
 }
-.newsletter form input {
-  position: relative;
-  height: 46px;
-  width: 100%;
-  border-radius: 25px;
-  border: 1px solid #E1E1E1;
-  padding: 0 0 0 20px;
-  outline: 0;
+.subscribe-panel .subscribebox #subscribeboxForm #subscribe-box {
+  padding: 8px 16px;
+  border-radius: 10px;
+  width: 500px;
+  border: none;
 }
-.newsletter form input:focus {
-  border: 1px solid #AEAEAE;
-}
-@media (min-width: 768px) {
-  .newsletter form input {
-    padding: 0 0 0 40px;
-  }
-}
-.newsletter form button {
-  height: 46px;
+.subscribe-panel .btn-subscribe {
   position: absolute;
   top: 0;
   right: 0;
-}
-@media (min-width: 992px) {
-  .newsletter form button::after {
-    margin-left: 15px;
-    content: "SUBSCRIBE FOR NEWSLETTER";
-  }
+  padding: 8px;
+  background-color: #FA3150;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .contact-form {
@@ -868,6 +897,10 @@ footer .container {
   .contact-form {
     padding: 60px 0;
   }
+}
+.contact-form .contact-form-img {
+  margin-bottom: 100px;
+  overflow: hidden;
 }
 .contact-form .container {
   border: 0px solid #E1E1E1;
@@ -886,12 +919,12 @@ footer .container {
   column-gap: 30px;
   row-gap: 30px;
   grid-template-columns: 1fr;
-  grid-template-areas: "name" "email" "phoneNumber" "companyName" "message" "terms" "button";
+  grid-template-areas: "name" "email" "message" "terms" "button";
 }
 @media (min-width: 992px) {
   .contact-form form {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "name email" "phoneNumber companyName" "message message" "terms terms" "button button";
+    grid-template-areas: "name email" "message message" "button button";
   }
 }
 .contact-form form .name {
@@ -900,29 +933,314 @@ footer .container {
 .contact-form form .email {
   grid-area: email;
 }
-.contact-form form .phoneNumber {
-  grid-area: phoneNumber;
-}
-.contact-form form .companyName {
-  grid-area: companyName;
-}
-.contact-form form .terms {
-  grid-area: terms;
-  margin: 10px 0;
-}
-.contact-form form .message {
+.contact-form form .message-box {
   grid-area: message;
+  width: 2fr;
 }
-.contact-form form textarea {
-  height: 100px;
-  resize: none;
-}
-.contact-form form button {
+.contact-form form .contact-form-button {
   grid-area: button;
 }
 @media (min-width: 992px) {
-  .contact-form form button {
+  .contact-form form .contact-form-button {
     display: flex;
     justify-self: flex-start;
   }
+}
+.contact-form .google-map {
+  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+}
+
+.register-form {
+  padding: 20px 0 60px 0;
+}
+@media (min-width: 992px) {
+  .register-form {
+    padding: 60px 0;
+  }
+}
+.register-form .container {
+  border: 0px solid #E1E1E1;
+  padding: 30px;
+}
+@media (min-width: 768px) {
+  .register-form .container {
+    border: 1px solid #E1E1E1;
+  }
+}
+.register-form form {
+  display: grid;
+  column-gap: 30px;
+  row-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+}
+.register-form form .firstname {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+.register-form form .lastname {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+.register-form form .email {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.register-form form .password {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.register-form form .streetname {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.register-form form .postalcode {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+.register-form form .city {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+.register-form form .submitbutton {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+.best-collection {
+  padding: 40px 20px;
+}
+.best-collection .collection-title {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 38px;
+  color: #292929;
+}
+@media (min-width: 768px) {
+  .best-collection .collection-title {
+    font-size: 48px;
+  }
+}
+.best-collection .categories {
+  display: none;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 992px) {
+  .best-collection .categories {
+    display: flex;
+  }
+}
+.best-collection .category-item {
+  margin-right: 5px;
+}
+.best-collection .category-item + li::before {
+  content: "/";
+  margin-right: 5px;
+}
+.best-collection .collection-grid {
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  grid-gap: 20px;
+  justify-content: center;
+  grid-template-columns: repeat(4, calc(25% - 40px));
+}
+.best-collection .collection-item {
+  margin: 0;
+  color: #202020;
+  text-align: left;
+}
+.best-collection .btn-load-more {
+  padding: 40px;
+  text-align: center;
+}
+
+.up-to-sell {
+  background-color: #FAEFEF;
+  padding: 40px 20px;
+}
+.up-to-sell .collection-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas: "content" "item-1" "item-2";
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .up-to-sell .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "content content" "item-1 item-2";
+  }
+}
+@media (min-width: 992px) {
+  .up-to-sell .collection-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "item-1 content item-2";
+  }
+}
+.up-to-sell .collection-grid .item-1 {
+  grid-area: item-1;
+}
+.up-to-sell .collection-grid .discover {
+  grid-area: content;
+}
+.up-to-sell .collection-grid .item-2 {
+  grid-area: item-2;
+}
+.up-to-sell .collection-grid .collection-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.up-to-sell .collection-grid .collection-content .container {
+  text-align: center;
+  padding: 30px 20px;
+}
+.up-to-sell .body {
+  background-color: white;
+  width: 91%;
+}
+.up-to-sell .title {
+  color: black;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  padding: 10px;
+}
+.up-to-sell .price {
+  color: #636363;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+}
+.up-to-sell .discover {
+  text-align: center;
+}
+.up-to-sell .discover h1 {
+  padding: 10px;
+  color: #FA3150;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.up-to-sell .discover h2 {
+  padding: 10px;
+  color: #636363;
+  font-size: 48px;
+  font-weight: 700;
+}
+.up-to-sell .discover h3 {
+  padding: 10px;
+  color: #636363;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.up-to-sell .discover p {
+  padding: 10px;
+  color: #636363;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.up-to-sell .discover .btn-sell {
+  padding: 20px;
+  border: none;
+}
+
+.top-selling {
+  padding: 40px 20px;
+}
+.top-selling .top-selling-title {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: #292929;
+}
+.top-selling .collection-grid {
+  position: relative;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
+@media (min-width: 768px) {
+  .top-selling .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .top-selling .collection-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .top-selling .collection-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+.top-selling .collection-grid a:hover {
+  text-decoration: underline;
+  color: black;
+}
+.top-selling .collection-grid .title {
+  color: black;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.top-selling .collection-grid .price {
+  color: #636363;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.top-selling .btn-arrows {
+  text-align: center;
+}
+
+.subscribe-panel {
+  background-color: #AEAEAE;
+  height: 370px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscribe-panel .container {
+  background-color: #FFFFFF;
+  text-align: center;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscribe-panel .subscribebox {
+  background-color: #F3F2F2;
+  position: relative;
+}
+.subscribe-panel .subscribebox #subscribeboxForm #subscribe-box {
+  padding: 8px 16px;
+  border-radius: 10px;
+  width: 500px;
+  border: none;
+}
+.subscribe-panel .btn-subscribe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  background-color: #FA3150;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }

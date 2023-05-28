@@ -6,7 +6,7 @@ namespace WebApp.ViewModels
     {
         public string Name { get; set; } = null!;
         public string Email { get; set; } = null!;
-        public string Message { get; set; } = null!; 
+        public string Message { get; set; } = null!;
 
         public static implicit operator ContactFormEntity(ContactFormViewModel viewModel) 
         {

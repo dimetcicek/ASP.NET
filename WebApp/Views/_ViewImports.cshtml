@@ -2,8 +2,9 @@
 @using WebApp.ViewModels
 @using Microsoft.AspNetCore.Identity;
 @using WebApp.Models.Entities;
-@using WebApp.Services;
 @using Webapp.Helpers.Repositories;
+@using WebApp.Helpers.Services;
 
 @inject ShowcaseService showcaseService
 @inject SignInManager<UserEntity> SignInManager
+@inject ProductRepository productRepo

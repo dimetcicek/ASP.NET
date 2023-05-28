@@ -1,16 +1,6 @@
-﻿@inject ProductRepository productRepo
+﻿@model ProductsViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
 
-<div>
-    @foreach(var product in await productRepo.GetAsync())
-    {
-        <div>
-            <div><a asp-action="details" asp-route-id ="@product.Id">@product.Title</a></div>
-            <div>
-                @foreach(var tag in product.ProductTags)
-                {
-                    <span class="me-2">@tag.Tag.TagName</span>
-                }
-            </div>
-        </div>
-    }
-</div>
+<partial name="/Views/Partials/_GridCollection.cshtml" model="@Model.Products" />

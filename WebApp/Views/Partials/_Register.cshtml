@@ -1,45 +1,56 @@
 ﻿@model RegisterViewModel
 
-<form asp-action="Index" asp-controller="Register" method="post" novalidate>
-    <div asp-validation-summary=ModelOnly class="text-danger"></div>
+<div class="register-form">
+    <div class="container">
+        <form asp-action="Index" asp-controller="Register" method="post" novalidate>
+            <div asp-validation-summary=ModelOnly class="text-danger"></div>
 
-    <div class="mb-3">
-        <label asp-for="FirstName" class="form-label">FirstName</label>
-        <input asp-for="FirstName" class="form-control" onkeyup="validateText(event)"/>
-        <span asp-validation-for="FirstName" class="small text-danger"></span>
-    </div>
-        <div class="mb-3">
-        <label asp-for="LastName" class="form-label">Last Name</label>
-        <input asp-for="LastName" class="form-control" onkeyup="validateText(event)" />
-        <span asp-validation-for="LastName" class="small text-danger"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label">Email</label>
-        <input asp-for="Email" type="email" class="form-control" onkeyup="validateEmail(event)" />
-        <span asp-validation-for="Email" class="small text-danger"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="Password" class="form-label">Password</label>
-        <input asp-for="Password" type="password" class="form-control" onkeyup="validatePassword(event)" />
-        <span asp-validation-for="Password" class="small text-danger"></span>
-    </div>
-        <div class="mb-3">
-        <label asp-for="StreetName" class="form-label">Street Name</label>
-        <input asp-for="StreetName" class="form-control" onkeyup="validateText(event)" />
-        <span asp-validation-for="StreetName" class="small text-danger"></span>
-    </div>
-        <div class="mb-3">
-        <label asp-for="PostalCode" class="form-label">Postal Code</label>
-        <input asp-for="PostalCode" class="form-control" onkeyup="validateText(event)" />
-        <span asp-validation-for="PostalCode" class="small text-danger"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="City" class="form-label">City</label>
-        <input asp-for="City" class="form-control" onkeyup="validateText(event)"/>
-        <span asp-validation-for="City" class="small text-danger"></span>
-    </div>
+            <div class="mb-3 firstname">
+                <label asp-for="FirstName" class="form-label">First Name</label>
+                <input asp-for="FirstName" class="form-control" onkeyup="validateText(event)" />
+                <span asp-validation-for="FirstName" class="small text-danger"></span>
+            </div>
 
-    <div class="d-grid">
-        <button type="submit" class="btn btn-success">SUBMIT</button>
+            <div class="mb-3 lastname">
+                <label asp-for="LastName" class="form-label">Last Name</label>
+                <input asp-for="LastName" class="form-control" onkeyup="validateText(event)" />
+                <span asp-validation-for="LastName" class="small text-danger"></span>
+            </div>
+
+            <div class="mb-3 email">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" type="email" class="form-control" onkeyup="validateEmail(event)" />
+                <span asp-validation-for="Email" class="small text-danger"></span>
+            </div>
+
+            <div class="mb-3 password">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" onkeyup="validatePassword(event)" />
+                <span asp-validation-for="Password" class="small text-danger"></span>
+            </div>
+
+            <div class="mb-3 streetname">
+                <label asp-for="StreetName" class="form-label">Street Name</label>
+                <input asp-for="StreetName" class="form-control" onkeyup="validateText(event)" />
+                <span asp-validation-for="StreetName" class="small text-danger"></span>
+            </div>
+
+            <div class="mb-3 postalcode">
+                <label asp-for="PostalCode" class="form-label">Postal Code</label>
+                <input asp-for="PostalCode" class="form-control" onkeyup="validateText(event)" />
+                <span asp-validation-for="PostalCode" class="small text-danger"></span>
+            </div>
+
+            <div class="mb-3 city">
+                <label asp-for="City" class="form-label">City</label>
+                <input asp-for="City" class="form-control" onkeyup="validateText(event)" />
+                <span asp-validation-for="City" class="small text-danger"></span>
+            </div>
+
+            <div class="register-form-button submitbutton">
+                <button type="submit" class="btn btn-theme">SUBMIT</button>
+            </div>
+        </form>
     </div>
-</form>
+</div>
+

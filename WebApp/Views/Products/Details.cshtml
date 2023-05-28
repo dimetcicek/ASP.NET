@@ -1,5 +1,4 @@
 ﻿@model int
-@inject ProductRepository productRepo
 
 @{
     var product = await productRepo.GetAsync(x => x.Id == Model);
@@ -7,17 +6,16 @@
 
 @if(product != null)
 {
-        <div>
-        <div>@product.Id</div>
-        <div>@product.Title</div>
-        <div>
-            @foreach (var tag in product.ProductTags)
-            {
-                <span class="me-2">@tag.Tag.TagName</span>
-            }
+    <section class="product-details">
+            <div class="product-details-img">
+            <img src="@product.ImageUrl" />
+            </div>
+        <div class="product-details-features">
+            <h1>@product.Title</h1>
+            <p>@product.Description</p>
+            <h3>$@product.Price.ToString("N")</h3>
         </div>
-        <div>@product.Description</div>
-    </div>
+    </section>
 } else
 {
     <div>

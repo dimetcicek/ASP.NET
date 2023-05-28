@@ -12,8 +12,8 @@ using WebApp.Contexts;
 namespace WebApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230526224832_ContactForms")]
-    partial class ContactForms
+    [Migration("20230528182110_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,14 +55,14 @@ namespace WebApp.Migrations
                         new
                         {
                             Id = "f0237b71-fe5d-40b5-af1a-f703e065998d",
-                            ConcurrencyStamp = "3327ad36-6c6d-4e86-b36d-0a17600a1fdd",
+                            ConcurrencyStamp = "bfc0e556-1074-4579-a3be-2403a602bcbd",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "12fddf82-afca-405b-9c7a-f827156eb4b1",
-                            ConcurrencyStamp = "66a70c88-8eb2-4092-998f-1788c1cbcc78",
+                            ConcurrencyStamp = "99a86d6d-e357-496b-8fbb-295190f39f4c",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -153,13 +153,6 @@ namespace WebApp.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "4b9ae07c-75ef-4582-bd11-2b17ca2e0a97",
-                            RoleId = "f0237b71-fe5d-40b5-af1a-f703e065998d"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -260,10 +253,74 @@ namespace WebApp.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Det ursprungliga HyperX Cloud II är ett ultrabekvämt gamingheadset med utmärkt ljud. ",
+                            Description = "HyperX Cloud II Gaming Headset i rött och svart har en avancerad USB audio control box med inbyggt DSP ljudkort, detta stärker ljud och tal så att du får en optimal gaming upplevelse. Med virtual 7.1 surround sound i kombination med stängda kåpor upplever du en detaljrikedom du tidigare aldrig hört! Mikrofon och ljud har separata volymkontroller som gör det lätt att höja och sänka volymen oberoende av varandra. Kompatibelt med PC & Mac via USB och stereokompatibelt med PS4, Xbox One1 och mobil. ",
                             ImageUrl = "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_80726870/fee_786_587_png/HYPERX-Cloud-II-Wireless---Tr%C3%A5dl%C3%B6st-Gamingheadset-f%C3%B6r-PC--PS4-%26-Nintendo-Switch",
-                            Price = 1190m,
-                            Title = "Logitech MK540 Advanced"
+                            Price = 119m,
+                            Title = "HyperX Cloud 2"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Den här formen kommer från vår prisbelönta DeathAdder-ergonomi och är utformad för små till medelstora handstorlekar och är mångsidig nog för att passa de flesta greppstilar. Till nollkostnad för att bygga hållfasthet har chassit också kastat bort mer vikt så att du kan dra av enkla svepningar och spela under långa timmar i komfort.\r\n\r\nMed förbättrad taktilitet för skarpare och mer tillfredsställande klick aktiverar omkopplarna i denna lilla ergonomiska spelmus med en branschledande responstid på 0,2 millisekunder. Genom att använda en infraröd ljusstråle istället för fysisk kontakt för att registrera varje klick, tar denna form av aktivering bort behovet av avstängningsfördröjning och utlöser aldrig oavsiktliga klick, vilket ger dig närmare kontroll och felfri utförande. ",
+                            ImageUrl = "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSYnJyGs3FmYgpXDPlRqMFwRU86cUlY6PCE0gedPYcUeCnvTXYFoZfPOxoIVlGCTgifbnT72rKoctXdXEhKRWDyGrpWn8P2y2xxfBotAEOU0jeeCf0qRzmHSSCUfXd1aH9_VUva&usqp=CAc",
+                            Price = 123m,
+                            Title = "Razer Deathadder"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "MSI GF63 Thin bärbar dator för gaming är byggd med både hållbarhet och prestanda i åtanke. Tack vare metallchassit och det långvariga batteriet kan du ta ditt spelande på språng utan att behöva oroa dig",
+                            ImageUrl = "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRqyp5LozRGVoVB47jxuVY0FQV4d55gzmijVDef8TPGFWWBEODjL1aqADg-r_vUDj5hLM83XgRq44jVIIvpcrma44d_FE7IAcyyDR6BK1pfx7-GF2TBqoQ&usqp=CAc",
+                            Price = 1200m,
+                            Title = "MSI GF63"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Varje detalj i GMMK 2 Pre-built från Glorius har noggrant utformats för att ge dig den ultimata skriv- och spelupplevelsen. Den anodiserade aluminiumramen ger en solid grund för de inkluderade double-shot keycapsen, som använder ett rent typsnitt som aldrig bleknar. Hotswap-stöd gör att användarna enkelt kan koppla in sin önskade switchar. Glorious linjära Fox-switchar och stabilisatorer är pre-lubed för att vara mjuka, och det tjocka interna skummaterialet säkerställer en förstklassig ljudkvalitet. ",
+                            ImageUrl = "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRn6vt-ynbab_gYnu59ovKYcf9m26C-fS3oMoDv4YvYWWnNluIBJFdKZe3WKa2WsUsVv57hpVBULm9Qcr4ouhoEIlIeyNeDLqyZJ9zwftuSI8JlAHVl4v68TcycE5WRbBzpnw&usqp=CAc",
+                            Price = 79m,
+                            Title = "Glorious GMMK 2"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "G2412 från MSI är en bildskärm perfekt för gaming. G2412 gamingskärm har 23.8” och levererar hela 170 bilder per sekund med sin FreeSync Premium teknologi med en otroligt snabb responstid på endast 1ms. Bildskärmen har 16.7 miljoner färger, 1100:1 i kontrast och ett brett bildförhållande på 16:9 med en justerbar lutning på -5° ~ 20°.",
+                            ImageUrl = "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRhk2LD0zCMVYuQh7Tn4ScDBHkaTG8z4iRdps16e41PWFTRi2QxGRnlhPKiWB3POnhG1HogyH0kEj0zQ4LmglNMzkt1wzyAkyABkFuDDJrp7EusG14v04W7Mr33AuLrneJBeQ&usqp=CAc",
+                            Price = 135m,
+                            Title = "MSI G2412"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Model O är en solid mus som har egenskaper de flesta tillverkare bara drömmer om att få använda när de tillverkar gamingmöss. Nu tar dom steget upp till nästa nivå med en av de mest avancerade sensorer som någonsin konstruerats, deras egna BAMF-sensor. Model-O Wireless utnyttjar kraften i BAMF sensoren och det isiga, släta glidet från deras G-skates för att ge dig maximal kontroll, minimalt med friktion och noll fördröjning.",
+                            ImageUrl = "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTwCW8aB33v_fsuHcPMsk999ZuffyecrPaOqKrCC5tEO4SUHXDPzg5B0YkdoMP3xkgfsXle90CJ27tBs_I1de6EqM8K9nZVQQ-JNMys5IRBkmISVTfwn_AF5fDi2Z51_6aqSNg&usqp=CAc",
+                            Price = 59m,
+                            Title = "Glorious Model O"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Hör och låt som ett proffs med Logitech PRO X. Med Blue VOICE-mikrofonteknik och nästa generations 7.1-surroundljud. Det externa USB-ljudkortet ger dig högkvalitativ kristallklart ljud. Designat för turneringar med nedladdningsbara ljud EQ. ",
+                            ImageUrl = "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSSA1T7g6EGImiCBiOhngW2vye9UiKz1otq2vZfPweJcytckNt2y67r9L5wxrsYDc79dOk92zcIEJXh7fy9EHku4oBlZ-DeLPYn1sRh7ewh6C8GFNQzOQ1xKcrXoBQNJy9G8A&usqp=CAc",
+                            Price = 44m,
+                            Title = "Logitech G PRO X"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Byggt för proffsen, inifrån och ut. Med sin kompakta design utan numerisk knappsats frigör det mekaniska speltangentbordet Logitech G® PRO bordsyta för lågkänsliga musrörelser. Clicky-brytare i proffsklass ger hörbar återkoppling. Med programmerbar LIGHTSYNC RGB och inbyggt minne kan du lagra anpassade belysningsmönster för turneringar.",
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR-Ia36fWUj3UynzprsqdYtaEyKvN6N6ABt3bt4z5_nXXr6lFIGWnhRQkIKLrjjRG-WTizzqnR_TdmhgOpK-q7nuMFSlbCbD6toYEEzPGPdtPb5mLEUe8jiQg&usqp=CAc",
+                            Price = 62m,
+                            Title = "Logitech G PRO "
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Extra bred musmatta med högkvalitativ ultravävd yta som har utmärkt glidförmåga, sydda kanter och halkskyddad undersida.",
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSzFXVTBEfegK4S687W39k16CHUJRCC-IeYLPAGquVEiMTjhJHgltLVsf3lhBRrRpS9Pb2xdrGtiXRTyHg83Ye7GxfamA9dqnHsonkyNqCnWcZTiZiZknLmG0Me-FtYso0Ftw&usqp=CAc",
+                            Price = 13m,
+                            Title = "Steelseries QcK"
                         });
                 });
 
@@ -286,6 +343,46 @@ namespace WebApp.Migrations
                         {
                             ProductId = 1,
                             TagId = 1
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            TagId = 1
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            TagId = 1
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            TagId = 1
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            TagId = 2
+                        },
+                        new
+                        {
+                            ProductId = 6,
+                            TagId = 2
+                        },
+                        new
+                        {
+                            ProductId = 7,
+                            TagId = 2
+                        },
+                        new
+                        {
+                            ProductId = 8,
+                            TagId = 3
+                        },
+                        new
+                        {
+                            ProductId = 9,
+                            TagId = 3
                         });
                 });
 
@@ -407,24 +504,6 @@ namespace WebApp.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "4b9ae07c-75ef-4582-bd11-2b17ca2e0a97",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "062e10a0-3034-4751-b665-b4af2d722430",
-                            Email = "admin@domain.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@DOMAIN.COM",
-                            NormalizedUserName = "ADMIN@DOMAIN.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGzKRGe6rBR7LfLJqAKmpX/FT4M7X8P6HxpVI0/i9OjyH28AkWeEPwXWGXgdVpaobw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "ecd898c0-3e63-419b-ac8a-6d35b138b1f3",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@domain.com"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

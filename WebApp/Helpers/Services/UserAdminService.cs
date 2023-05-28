@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 using WebApp.Models.Entities;
 
-namespace WebApp.Services;
+namespace WebApp.Helpers.Services;
 
 public class UserAdminService
 {
@@ -18,7 +18,7 @@ public class UserAdminService
     {
 
         var users = new List<User>();
-        foreach(var user in await _userManager.Users.ToListAsync())
+        foreach (var user in await _userManager.Users.ToListAsync())
         {
             var _user = new User
             {
@@ -28,7 +28,7 @@ public class UserAdminService
                 Email = user.Email,
             };
 
-            foreach(var role in await _userManager.GetRolesAsync(user))
+            foreach (var role in await _userManager.GetRolesAsync(user))
             {
                 _user.RoleNames.Add(role);
             }

@@ -24,18 +24,33 @@ public class AuthenticationService
     {
         try
         {
+            var role = "user";
+
+            var admins = await _userManager.GetUsersInRoleAsync("admin");
+
+            // If we dont have any admins, make this user admin.
+            if (admins.Count == 0)
+            {
+                role = "admin";
+            }
+
             var result = await _userManager.CreateAsync(viewModel, viewModel.Password);
+
             if (result.Succeeded)
             {
                 var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Email == viewModel.Email);
-                await _userManager.AddToRoleAsync(user!, "user");
+                await _userManager.AddToRoleAsync(user!, role);
 
                 var address = await _addressService.GetOrCreateAsync(viewModel);
                 return await _addressService.AddUserAddress(user!.Id, address.Id);
 
             }
         }
-        catch (Exception ex) { Debug.WriteLine(ex.Message); }
+        catch (Exception ex) 
+        { 
+            Debug.WriteLine(ex.Message);
+        }
+
         return false;
     }
 

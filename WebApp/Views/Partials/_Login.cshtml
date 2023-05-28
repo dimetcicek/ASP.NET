@@ -1,20 +1,37 @@
 ﻿@model LoginViewModel
 
-<form asp-action="Index" asp-controller="Login" method="post" novalidate>
-    <div asp-validation-summary=ModelOnly class="text-danger"></div>
+<div class="login-form">
+    <div class="container">
+        <form asp-action="Index" asp-controller="Login" method="post" novalidate>
+            <div asp-validation-summary=ModelOnly class="text-danger"></div>
 
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label">Email</label>
-        <input asp-for="Email" type="email" class="form-control" onkeyup="validateEmail(event)" />
-        <span asp-validation-for="Email" class="small text-danger"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="Password" class="form-label">Password</label>
-        <input asp-for="Password" type="password" class="form-control" onkeyup="validatePassword(event)" />
-        <span asp-validation-for="Password" class="small text-danger"></span>
-    </div>
+            <div style="width: 50%;margin: auto;">
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" onkeyup="validateEmail(event)" />
+                    <span asp-validation-for="Email" class="small text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" onkeyup="validatePassword(event)" />
+                    <span asp-validation-for="Password" class="small text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="RememberMe" class="form-label">Remember Me</label>
+                    @Html.CheckBoxFor(x => x.RememberMe, new { @class = "btn-toggle" })
+                </div>
 
-    <div class="d-grid">
-        <button type="submit" class="btn btn-success">SUBMIT</button>
+                <div class="login-button">
+                    <button type="submit" class="btn btn-theme">SUBMIT</button>
+                </div>
+            </div>
+
+            <div class="mb-3" style="text-align: center; margin-top: 100px;">
+                <h4>Don't have an account?</h4>
+                <a asp-controller="register" asp-action="index" class="collection-item">
+                    <h5>Register now</h5>
+                </a>
+            </div>
+        </form>
     </div>
-</form>
+</div>

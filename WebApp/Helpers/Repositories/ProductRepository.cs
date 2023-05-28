@@ -29,5 +29,12 @@ namespace Webapp.Helpers.Repositories
             var product = await _context.Products.Include(x => x.ProductTags).ThenInclude(x => x.Tag).FirstOrDefaultAsync(expression);
             return product!;
         }
+
+        public async Task<IEnumerable<ProductEntity>> GetAsync(string tag)
+        {
+            var products = await _context.Products.Include(x => x.ProductTags).ThenInclude(x => x.Tag).ToListAsync();
+
+            return string.IsNullOrEmpty(tag) ? products : products.Where(x => x.ProductTags.Any(t => string.Equals(t.Tag.TagName, tag, StringComparison.OrdinalIgnoreCase)));
+        }
     }
 }

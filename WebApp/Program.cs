@@ -5,7 +5,6 @@ using WebApp.Contexts;
 using WebApp.Helpers.Repositories;
 using WebApp.Helpers.Services;
 using WebApp.Models.Entities;
-using WebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();

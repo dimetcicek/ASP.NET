@@ -1,6 +1,6 @@
 ﻿using WebApp.Models;
 
-namespace WebApp.Services;
+namespace WebApp.Helpers.Services;
 
 public class ShowcaseService
 {

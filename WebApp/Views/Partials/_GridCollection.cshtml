@@ -13,7 +13,7 @@
                 <ul class="categories">
                     @foreach (var category in Model.Categories)
                     {
-                        <li class="category-item">@category</li>
+                        <li class="category-item">@Html.ActionLink(@category, "", new { tag = @category })</li>
                     }
                 </ul>
             }

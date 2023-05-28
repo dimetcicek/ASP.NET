@@ -5,6 +5,7 @@
 @import './components/base';
 @import './components/buttons';
 @import './components/collectionitem';
+@import './components/productDetails';
 @import './components/collectioncontent';
 @import './components/forms';
 
@@ -18,3 +19,8 @@
 @import './components/topselling';
 @import './components/newsletter';
 @import './components/contactform'; 
+@import './components/_registerform.scss';
+@import './components/_bestcollection.scss';
+@import './components//_uptosell.scss';
+@import './components/_topselling.scss';
+@import './components/_newsletter.scss';

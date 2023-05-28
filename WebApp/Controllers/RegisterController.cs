@@ -20,7 +20,7 @@ namespace WebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new RegisterViewModel());
         }
 
         [HttpPost]
@@ -31,7 +31,9 @@ namespace WebApp.Controllers
                 if (!await _userManager.Users.AnyAsync(x => x.Email == viewModel.Email))
                 {
                     if (await _authenticationService.RegisterAsync(viewModel))
+                    {
                         return RedirectToAction("Index", "Login");
+                    }
                 }
 
                 ModelState.AddModelError("", "User with the same email address already exists");

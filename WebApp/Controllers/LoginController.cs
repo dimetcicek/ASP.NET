@@ -15,7 +15,7 @@ namespace WebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new LoginViewModel());
         }
 
         [HttpPost]

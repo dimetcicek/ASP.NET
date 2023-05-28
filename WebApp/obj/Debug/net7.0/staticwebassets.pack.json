@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\scss\\components\\_base.scss"
     },
     {
+      "Id": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_bestcollection.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_bestcollection.scss"
+    },
+    {
       "Id": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_breadcrumb.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_breadcrumb.scss"
     },
@@ -107,6 +111,14 @@
     {
       "Id": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_newsletter.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_newsletter.scss"
+    },
+    {
+      "Id": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_productDetails.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_productDetails.scss"
+    },
+    {
+      "Id": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_registerform.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_registerform.scss"
     },
     {
       "Id": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_showcase.scss",

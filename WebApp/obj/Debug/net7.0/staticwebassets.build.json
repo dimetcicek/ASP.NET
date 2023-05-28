@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XpE2BVE/8gXdJxDDd0QXWDJTmMN4m7lqsMCAWuZq5/Y=",
+  "Hash": "RyYxtthfBvZbC9CcTIfsOTRxmjg+pmWsZfJE7OS9m88=",
   "Source": "WebApp",
   "BasePath": "_content/WebApp",
   "Mode": "Default",
@@ -1309,6 +1309,23 @@
       "OriginalItemSpec": "wwwroot\\scss\\components\\_base.scss"
     },
     {
+      "Identity": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_bestcollection.scss",
+      "SourceId": "WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\",
+      "BasePath": "_content/WebApp",
+      "RelativePath": "scss/components/_bestcollection.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_bestcollection.scss"
+    },
+    {
       "Identity": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_breadcrumb.scss",
       "SourceId": "WebApp",
       "SourceType": "Discovered",
@@ -1494,6 +1511,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\components\\_newsletter.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_productDetails.scss",
+      "SourceId": "WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\",
+      "BasePath": "_content/WebApp",
+      "RelativePath": "scss/components/_productDetails.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_productDetails.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_registerform.scss",
+      "SourceId": "WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\",
+      "BasePath": "_content/WebApp",
+      "RelativePath": "scss/components/_registerform.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_registerform.scss"
     },
     {
       "Identity": "C:\\Users\\Dimet\\OneDrive\\Dokument\\Github\\ASP.NET\\WebApp\\wwwroot\\scss\\components\\_showcase.scss",
